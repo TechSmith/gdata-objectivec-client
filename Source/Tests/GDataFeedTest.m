@@ -984,11 +984,12 @@
   // We'll allocate it dynamically since source code cannot contain non-ASCII.
   NSString *templateStr = @"Test %C Alb%Cm";
   NSString *photoAlbumName = [NSString stringWithFormat:templateStr,
-                              0x262F, 0x00FC]; // yin yang, u with umlaut
+                              (unichar) 0x262F, (unichar) 0x00FC]; // yin yang, u with umlaut
 
   // Non-ascii photo description, includes the Wheel of Dharma
   NSString *photoDescriptionText = [NSString stringWithFormat:
-                                    @"Caption for the car %C photo", 0x2638];
+                                    @"Caption for the car %C photo",
+                                    (unichar) 0x2638];
 
   TestKeyPathValues tests[] =
   {
@@ -1335,7 +1336,7 @@
     { @"entries.0.issueType", @"http-error" },
     { @"entries.0.issueURLString", @"http://example.com/dir/" },
     { @"entries.0.issueLinkedFromURLStrings.0", @"http://example.com" },
-    { @"entries.0.issueLinkedFromURLStrings.0.className", @"NSCFString" },
+    { @"entries.0.issueLinkedFromURLStrings.0.className", @"__NSCFString" },
 
     { @"", @"" }, // end of feed
 
