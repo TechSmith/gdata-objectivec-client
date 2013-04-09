@@ -372,26 +372,35 @@
   }
 }
 
+- (BOOL)isShared {
+  BOOL flag = [GDataCategory categories:[self categories]
+              containsCategoryWithLabel:kGDataCategoryLabelShared];
+  return flag;
+}
+
+- (void)setIsShared:(BOOL)flag {
+  GDataCategory *cat = [GDataCategory categoryWithLabel:kGDataCategoryLabelShared];
+  if (flag) {
+    [self addCategory:cat];
+  } else {
+    [self removeCategory:cat];
+  }
+}
+
 #pragma mark -
 
 - (NSArray *)parentLinks {
-
-  NSArray *links = [self links];
-  if (links == nil) return nil;
-
-  NSArray *parentLinks = [GDataUtilities objectsFromArray:links
-                                                withValue:kGDataCategoryDocParent
-                                               forKeyPath:@"rel"];
-  return parentLinks;
+  return [self linksWithRelAttributeValue:kGDataCategoryDocParent];
 }
 
 - (GDataLink *)thumbnailLink {
-  NSArray *links = [self links];
-  GDataLink *thumbnail = [GDataUtilities firstObjectFromArray:links
-                                                    withValue:kGDataDocsThumbnailRel
-                                                   forKeyPath:@"rel"];
-  return thumbnail;
+  return [self linkWithRelAttributeValue:kGDataDocsThumbnailRel];
 }
+
+- (GDataLink *)alternateSelfLink {
+  return [self linkWithRelAttributeValue:kGDataDocsAlternateSelfRel];
+}
+
 
 - (GDataFeedLink *)feedLinkForRel:(NSString *)rel {
 
@@ -426,7 +435,7 @@
 + (NSString *)defaultServiceVersion {
   return kGDataDocsDefaultServiceVersion;
 }
-  
+
 @end
 
 #endif // !GDATA_REQUIRE_SERVICE_INCLUDES || GDATA_INCLUDE_DOCS_SERVICE

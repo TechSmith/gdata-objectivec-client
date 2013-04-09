@@ -77,10 +77,18 @@
 - (BOOL)isViewed;
 - (void)setIsViewed:(BOOL)flag;
 
+- (BOOL)isShared;
+- (void)setIsShared:(BOOL)flag;
+
 // convenience accessors
 - (NSArray *)parentLinks;
 
 - (GDataLink *)thumbnailLink;
+
+// An alternate self link. Used only in GDataEntryDocBase subclasses that
+// appear in GDataFeedDocChange. The value is the selfLink of the
+// GDataEntryDocBase.
+- (GDataLink *)alternateSelfLink;
 
 - (GDataFeedLink *)ACLFeedLink;
 - (GDataFeedLink *)revisionFeedLink;
