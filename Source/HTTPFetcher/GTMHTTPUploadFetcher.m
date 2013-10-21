@@ -597,7 +597,7 @@ totalBytesExpectedToSend:0];
   [self setResponseHeaders:[chunkFetcher responseHeaders]];
 
   if (error) {
-    int status = [error code];
+    NSInteger status = [error code];
 
     // status 308 is "resume incomplete", meaning we should get the offset
     // from the Range header and upload the next chunk
