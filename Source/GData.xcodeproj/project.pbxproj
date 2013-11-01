@@ -6566,8 +6566,10 @@
 		4F1C6E101027B3CF00B46459 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				GCC_ENABLE_OBJC_GC = unsupported;
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-DGDATA_IPHONE=1",
@@ -6583,8 +6585,10 @@
 		4F1C6E111027B3CF00B46459 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				GCC_ENABLE_OBJC_GC = unsupported;
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-DGDATA_IPHONE=1",
