@@ -6579,6 +6579,7 @@
 				);
 				PRODUCT_NAME = GDataTouchStaticLib;
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
 			};
 			name = Debug;
 		};
@@ -6598,6 +6599,7 @@
 				);
 				PRODUCT_NAME = GDataTouchStaticLib;
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
