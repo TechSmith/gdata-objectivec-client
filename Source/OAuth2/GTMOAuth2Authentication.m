@@ -21,10 +21,6 @@
 // standard OAuth keys
 static NSString *const kOAuth2AccessTokenKey       = @"access_token";
 static NSString *const kOAuth2RefreshTokenKey      = @"refresh_token";
-static NSString *const kOAuth2ClientIDKey          = @"client_id";
-static NSString *const kOAuth2ClientSecretKey      = @"client_secret";
-static NSString *const kOAuth2RedirectURIKey       = @"redirect_uri";
-static NSString *const kOAuth2ResponseTypeKey      = @"response_type";
 static NSString *const kOAuth2ScopeKey             = @"scope";
 static NSString *const kOAuth2ErrorKey             = @"error";
 static NSString *const kOAuth2TokenTypeKey         = @"token_type";
@@ -40,8 +36,6 @@ static NSString *const kUserEmailIsVerifiedKey    = @"isVerified";
 // fetcher keys
 static NSString *const kTokenFetchDelegateKey = @"delegate";
 static NSString *const kTokenFetchSelectorKey = @"sel";
-
-static NSString *const kRefreshFetchArgsKey = @"requestArgs";
 
 // If GTMNSJSONSerialization is available, it is used for formatting JSON
 #if (TARGET_OS_MAC && !TARGET_OS_IPHONE && (MAC_OS_X_VERSION_MAX_ALLOWED < 1070)) || \
