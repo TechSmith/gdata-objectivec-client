@@ -363,6 +363,7 @@ finishedWithAuth:(GTMOAuth2Authentication *)auth
 
 
 - (void)viewDidLoad {
+  [super viewDidLoad];
   rightBarButtonItem_.customView = navButtonsView_;
   self.navigationItem.rightBarButtonItem = rightBarButtonItem_;
 }
