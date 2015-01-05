@@ -26,9 +26,9 @@
  #endif
 #endif  // !defined(GTM_NSSTREAM_DELEGATE)
 
-#ifdef GTM_TARGET_NAMESPACE
+#ifdef GDATA_TARGET_NAMESPACE
   // we're using target namespace macros
-  #import "GTMDefines.h"
+  #import "GDataDefines.h"
 #endif
 
 @interface GTMReadMonitorInputStream : NSInputStream GTM_NSSTREAM_DELEGATE {
